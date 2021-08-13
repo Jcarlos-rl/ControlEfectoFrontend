@@ -20,14 +20,26 @@ let Ripple = {
             styles = `
                 width: ${rect.width * 2}px;
                 height:${rect.width * 2}px;
-                background-color: rgba(255,255,255,0.56);
+                background-color: white;
+                opacity: 0.56;
                 border-radius:50%;
                 position: absolute;
                 top: ${clickPosition.y- rect.width}px;
                 left: ${clickPosition.x- rect.width}px;
+                transform: scale(0);
+                transition: all 0.3s cubic-bezier(0.3, 0.0, 0.2, 1);
             `;
 
             ripple.style.cssText = styles;
+
+            setTimeout(()=>{
+                ripple.style.transform = 'scale(1)';
+                ripple.style.opacity = '0';
+            },50);
+
+            setTimeout(()=>{
+                ripple.remove();
+            },350)
 
             element.appendChild(ripple);
         })
