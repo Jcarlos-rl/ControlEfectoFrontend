@@ -1,0 +1,22 @@
+.slider{
+    width: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider .container{
+    white-space: nowrap;
+    position: relative;
+    transition: all 0.3s;
+    left: 0px;
+}
+
+.slider .container *{
+    white-space: normal;
+}
+
+.slider img{
+    width: 100%;
+    display: inline-block;
+    margin-right: -4px;
+}
